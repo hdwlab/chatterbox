@@ -19,6 +19,7 @@ from .models.t3.modules.cond_enc import T3Cond
 
 
 REPO_ID = "ResembleAI/chatterbox"
+REPO_REVISION = "05e904af2b5c7f8e482687a9d7336c5c824467d9"
 
 # Supported languages for the multilingual model
 SUPPORTED_LANGUAGES = {
@@ -196,7 +197,7 @@ class ChatterboxMultilingualTTS:
             snapshot_download(
                 repo_id=REPO_ID,
                 repo_type="model",
-                revision="main", 
+                revision=REPO_REVISION, 
                 allow_patterns=["ve.pt", "t3_mtl23ls_v2.safetensors", "s3gen.pt", "grapheme_mtl_merged_expanded_v1.json", "conds.pt", "Cangjie5_TC.json"],
                 token=os.getenv("HF_TOKEN"),
             )

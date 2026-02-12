@@ -17,6 +17,7 @@ from .models.t3.modules.cond_enc import T3Cond
 
 
 REPO_ID = "ResembleAI/chatterbox"
+REPO_REVISION = "05e904af2b5c7f8e482687a9d7336c5c824467d9"
 
 
 def punc_norm(text: str) -> str:
@@ -175,7 +176,7 @@ class ChatterboxTTS:
             device = "cpu"
 
         for fpath in ["ve.safetensors", "t3_cfg.safetensors", "s3gen.safetensors", "tokenizer.json", "conds.pt"]:
-            local_path = hf_hub_download(repo_id=REPO_ID, filename=fpath)
+            local_path = hf_hub_download(repo_id=REPO_ID, filename=fpath, revision=REPO_REVISION)
 
         return cls.from_local(Path(local_path).parent, device)
 

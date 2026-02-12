@@ -24,6 +24,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 REPO_ID = "ResembleAI/chatterbox-turbo"
+REPO_REVISION = "749d1c1a46eb10492095d68fbcf55691ccf137cd"
 
 
 def punc_norm(text: str) -> str:
@@ -196,7 +197,8 @@ class ChatterboxTurboTTS:
             repo_id=REPO_ID,
             token=os.getenv("HF_TOKEN") or True,
             # Optional: Filter to download only what you need
-            allow_patterns=["*.safetensors", "*.json", "*.txt", "*.pt", "*.model"]
+            allow_patterns=["*.safetensors", "*.json", "*.txt", "*.pt", "*.model"], 
+            revision=REPO_REVISION,
         )
 
         return cls.from_local(local_path, device)
