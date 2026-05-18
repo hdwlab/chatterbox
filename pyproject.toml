@@ -10,7 +10,7 @@ authors = [
 ]
 dependencies = [
     "numpy>1.23,<=1.26.4",
-    "librosa==0.11.0",
+    "librosa",
     "s3tokenizer",
     "torch>=2.6.0",
     "torchaudio>=2.6.0",
